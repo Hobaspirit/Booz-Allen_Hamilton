@@ -1,12 +1,15 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Nov 12 17:08:57 2021
+from typing import Optional
 
-@author: Hoba spirit
-"""
+from fastapi import FastAPI
+
+app = FastAPI()
 
 
-import streamlit as st
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
-#st.write(""" Welcome to Booz Allen project! 
-        # Our purpose is to provide a prediction of Remaining Useful Lifetime""")
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Optional[str] = None):
+    return {"item_id": item_id, "q": q}
