@@ -1,2 +1,2 @@
 # Predictive maintenance, time series
-Fourth Brain ML Project
+This project aims at predicting turbofan remainig useful lifetime using different time series algorithms.
